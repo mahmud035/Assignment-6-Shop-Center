@@ -4,7 +4,7 @@ import Products from './components/home/Products';
 import Footer from './components/shared/Footer';
 
 export const metadata = {
-  title: 'Home',
+  title: 'ShopCenter | Home',
   description: 'ShopCenter home page description',
 };
 
@@ -12,12 +12,10 @@ const HomePage = () => {
   return (
     <>
       <HeroSection />
-
       <main>
         <Products />
         <Contact />
       </main>
-
       <Footer />
     </>
   );

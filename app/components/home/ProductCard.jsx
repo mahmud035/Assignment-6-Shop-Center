@@ -14,11 +14,11 @@ const ProductCard = ({ product }) => {
         className="relative delay-150 w-180px lg:w-[270px] h-[205px] lg:h-[310px] bg-[#f8f8f8]  bg-cover bg-center transition-all duration-3000 ease-in-out transform"
       ></div>
       <h2 className="mt-2 text-sm lg:text-base">
-        <Link href={`/products/${id}`} className="text-base font-bold">
+        <Link href={`/products/${id}/#navbar`} className="text-base font-bold">
           {title}{' '}
         </Link>
         <span className="text-[#919090] capitalize">
-          <a href="./category.html">({category})</a>
+          <Link href={`/category/${category}/#navbar`}>({category})</Link>
         </span>
       </h2>
       <p className="text-[#919090] text-sm">{description.slice(0, 35)}...</p>

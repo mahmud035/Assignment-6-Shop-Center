@@ -1,6 +1,12 @@
 import { products } from '@/app/data/products';
 import Image from 'next/image';
+import Link from 'next/link';
 import StarIcon from '../../../public/assets/svg/star.svg';
+
+export const metadata = {
+  title: 'ShopCenter | Product Details',
+  description: 'ShopCenter product details page description',
+};
 
 const ProductDetailsPage = ({ params }) => {
   const { id } = params;
@@ -49,7 +55,9 @@ const ProductDetailsPage = ({ params }) => {
             <h1 className="font-serif text-xl italic font-semibold lg:text-3xl">
               {title}
             </h1>
-            <span className="text-[#919090] my-3 capitalize">{category}</span>
+            <span className="text-[#919090] my-3 capitalize">
+              <Link href={`/category/${category}/#navbar`}>{category}</Link>
+            </span>
             <div className="flex items-center justify-start gap-1 mt-3">
               {starArray.map((_, index) => (
                 <Image key={index} src={StarIcon} width={20} alt="Star Icon" />
