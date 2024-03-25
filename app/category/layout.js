@@ -1,7 +1,6 @@
 import CategoryList from '../components/category/CategoryList';
 import Contact from '../components/home/Contact';
 import HeroSection from '../components/home/HeroSection';
-import Footer from '../components/shared/Footer';
 
 const CategoryLayout = ({ children }) => {
   return (
@@ -16,7 +15,6 @@ const CategoryLayout = ({ children }) => {
 
         <Contact />
       </main>
-      <Footer />
     </>
   );
 };

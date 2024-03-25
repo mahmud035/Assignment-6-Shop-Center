@@ -1,7 +1,6 @@
 import Contact from './components/home/Contact';
 import HeroSection from './components/home/HeroSection';
 import Products from './components/home/Products';
-import Footer from './components/shared/Footer';
 
 export const metadata = {
   title: 'ShopCenter | Home',
@@ -16,7 +15,6 @@ const HomePage = () => {
         <Products />
         <Contact />
       </main>
-      <Footer />
     </>
   );
 };
