@@ -62,7 +62,7 @@ const ProductDetailsPage = ({ params }) => {
               {title}
             </h1>
             <span className="text-[#919090] my-3 capitalize">
-              <Link href={`/category/${category}/#navbar`}>{category}</Link>
+              <Link href={`/category/${category}`}>{category}</Link>
             </span>
             <div className="flex items-center justify-start gap-1 mt-3">
               {starArray.map((_, index) => (

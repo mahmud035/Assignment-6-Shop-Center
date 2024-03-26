@@ -6,7 +6,7 @@ const CategoryLayout = ({ children }) => {
   return (
     <>
       <HeroSection />
-      <main id="main">
+      <main>
         <section className="items-start justify-between w-11/12 py-0 mx-auto lg:w-10/12 max-w-7xl lg:py-10 lg:flex">
           {/* Sidebar */}
           <CategoryList />
