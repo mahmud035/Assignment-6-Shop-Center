@@ -8,6 +8,12 @@ export const metadata = {
   description: 'ShopCenter product details page description',
 };
 
+export const generateStaticParams = () => {
+  return products.map((product) => ({
+    id: product.id.toString(),
+  }));
+};
+
 const ProductDetailsPage = ({ params }) => {
   const { id } = params;
   const product = products.find((product) => product.id.toString() === id);

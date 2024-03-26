@@ -6,6 +6,16 @@ export const metadata = {
   description: 'ShopCenter category page description',
 };
 
+export const generateStaticParams = () => {
+  const uniqueCategories = [
+    ...new Set(products.map((product) => product.category)),
+  ];
+
+  return uniqueCategories.map((categoryName) => ({
+    categoryName: categoryName,
+  }));
+};
+
 const CategoryPage = ({ params }) => {
   const { categoryName } = params;
 
