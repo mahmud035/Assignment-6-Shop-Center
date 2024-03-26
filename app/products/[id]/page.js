@@ -1,3 +1,4 @@
+import ProductImages from '@/app/components/productDetails/ProductImages';
 import { products } from '@/app/data/products';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -17,16 +18,8 @@ export const generateStaticParams = () => {
 const ProductDetailsPage = ({ params }) => {
   const { id } = params;
   const product = products.find((product) => product.id.toString() === id);
-  const {
-    title,
-    description,
-    category,
-    price,
-    discountPercentage,
-    rating,
-    thumbnail,
-    images,
-  } = product || {};
+  const { title, description, category, price, discountPercentage, rating } =
+    product || {};
 
   const numberOfStar = Math.round(rating);
   const starArray = Array(numberOfStar).fill(0);
@@ -35,30 +28,8 @@ const ProductDetailsPage = ({ params }) => {
     <main className="h-screen">
       <section className="bg-[#fafaf2] h-full py-20">
         <div className="flex flex-col items-center justify-between w-11/12 gap-12 mx-auto lg:w-8/12 max-w-7xl lg:flex-row">
-          <div className="w-full p-4 border lg:w-7/12 border-slate-500/20">
-            <Image
-              src={thumbnail}
-              width={400}
-              height={500}
-              priority={true}
-              className="w-[400px] h-[500px] mx-auto object-cover"
-              alt="Product Thumbnail"
-            />
+          <ProductImages product={product} />
 
-            <div className="flex gap-4 mt-4">
-              {images.map((image, index) => (
-                <Image
-                  key={index}
-                  src={image}
-                  width={100}
-                  height={100}
-                  priority={true}
-                  className="w-[100px] h-[100px] mx-auto border object-cover"
-                  alt="Product Grid Image"
-                />
-              ))}
-            </div>
-          </div>
           <div className="w-full lg:w-5/12">
             <h1 className="font-serif text-xl italic font-semibold lg:text-3xl">
               {title}
