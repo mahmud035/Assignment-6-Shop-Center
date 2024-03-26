@@ -40,6 +40,7 @@ const ProductDetailsPage = ({ params }) => {
               src={thumbnail}
               width={400}
               height={500}
+              priority={true}
               className="w-[400px] h-[500px] mx-auto object-cover"
               alt="Product Thumbnail"
             />
@@ -51,6 +52,7 @@ const ProductDetailsPage = ({ params }) => {
                   src={image}
                   width={100}
                   height={100}
+                  priority={true}
                   className="w-[100px] h-[100px] mx-auto border object-cover"
                   alt="Product Grid Image"
                 />
