@@ -63,7 +63,7 @@ const ProductDetailsPage = ({ params }) => {
             <h1 className="font-serif text-xl italic font-semibold lg:text-3xl">
               {title}
             </h1>
-            <span className="text-[#919090] my-3 capitalize">
+            <span className="text-[#919090] my-3 capitalize hover:border-b hover:border-[#919090]">
               <Link href={`/category/${category}`}>{category}</Link>
             </span>
             <div className="flex items-center justify-start gap-1 mt-3">
