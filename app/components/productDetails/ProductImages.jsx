@@ -14,7 +14,7 @@ const ProductImages = ({ product }) => {
         width={400}
         height={500}
         priority={true}
-        className="w-[400px] h-[500px] mx-auto object-cover cursor-pointer transition-all hover:scale-105"
+        className="w-[400px] h-[500px] mx-auto object-cover transition-all hover:scale-105"
         alt="Product Thumbnail"
       />
 
