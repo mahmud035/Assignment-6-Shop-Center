@@ -1,9 +1,13 @@
 import ProductCard from '@/app/components/home/ProductCard';
 import { products } from '@/app/data/products';
 
-export const metadata = {
-  title: 'ShopCenter | Category',
-  description: 'ShopCenter category page description',
+export const generateMetadata = ({ params: { categoryName } }) => {
+  const capitalizedCategoryName =
+    categoryName.charAt(0).toUpperCase() + categoryName.slice(1);
+
+  return {
+    title: `Category: ${capitalizedCategoryName} | ShopCenter`,
+  };
 };
 
 export const generateStaticParams = () => {
@@ -16,9 +20,7 @@ export const generateStaticParams = () => {
   }));
 };
 
-const CategoryPage = ({ params }) => {
-  const { categoryName } = params;
-
+const CategoryPage = ({ params: { categoryName } }) => {
   const selectedCategoryProducts = products.filter(
     (product) => product.category === categoryName
   );

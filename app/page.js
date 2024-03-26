@@ -4,7 +4,7 @@ import Products from './components/home/Products';
 import Footer from './components/shared/Footer';
 
 export const metadata = {
-  title: 'ShopCenter | Home',
+  title: 'Home | ShopCenter',
   description: 'ShopCenter home page description',
 };
 

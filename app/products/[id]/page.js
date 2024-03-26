@@ -1,12 +1,17 @@
 import ProductImages from '@/app/components/productDetails/ProductImages';
 import { products } from '@/app/data/products';
+import { getProduct } from '@/app/utils';
 import Image from 'next/image';
 import Link from 'next/link';
 import StarIcon from '../../../public/assets/svg/star.svg';
 
-export const metadata = {
-  title: 'ShopCenter | Product Details',
-  description: 'ShopCenter product details page description',
+export const generateMetadata = ({ params: { id } }) => {
+  const product = getProduct(id);
+
+  return {
+    title: `${product.title} | ShopCenter`,
+    description: product.description,
+  };
 };
 
 export const generateStaticParams = () => {
@@ -15,9 +20,8 @@ export const generateStaticParams = () => {
   }));
 };
 
-const ProductDetailsPage = ({ params }) => {
-  const { id } = params;
-  const product = products.find((product) => product.id.toString() === id);
+const ProductDetailsPage = ({ params: { id } }) => {
+  const product = getProduct(id);
   const { title, description, category, price, discountPercentage, rating } =
     product || {};
 
