@@ -1,5 +1,6 @@
 import ProductCard from '@/app/components/home/ProductCard';
 import { products } from '@/app/data/products';
+import { getUniqueCategories } from '@/app/utils';
 
 export const generateMetadata = ({ params: { categoryName } }) => {
   const capitalizedCategoryName =
@@ -11,9 +12,7 @@ export const generateMetadata = ({ params: { categoryName } }) => {
 };
 
 export const generateStaticParams = () => {
-  const uniqueCategories = [
-    ...new Set(products.map((product) => product.category)),
-  ];
+  const uniqueCategories = getUniqueCategories();
 
   return uniqueCategories.map((categoryName) => ({
     categoryName: categoryName,

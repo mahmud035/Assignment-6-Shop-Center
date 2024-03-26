@@ -1,15 +1,12 @@
 'use client';
 
-import { products } from '@/app/data/products';
+import { getUniqueCategories } from '@/app/utils';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
 const CategoryList = () => {
   const pathname = usePathname();
-
-  const uniqueCategories = [
-    ...new Set(products.map((product) => product.category)),
-  ];
+  const uniqueCategories = getUniqueCategories();
 
   return (
     <div className="flex flex-col items-center justify-between w-full my-10 sm:flex-row lg:block lg:w-2/12 lg:my-0 lg:mt-4">
