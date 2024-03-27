@@ -9,36 +9,40 @@ const CategoryList = () => {
   const uniqueCategories = getUniqueCategories();
 
   return (
-    <div className="flex flex-col items-center justify-between w-full my-10 sm:flex-row lg:block lg:w-2/12 lg:my-0 lg:mt-4">
-      <Link
-        href={`/category/all-products`}
-        scroll={false}
-        className={`${
+    <div className="flex flex-col items-center justify-between w-full gap-6 my-10 sm:flex-row lg:block lg:w-2/12 lg:my-0 lg:mt-4">
+      <button
+        className={`box-border block w-4/5 h-10 pl-2 mt-4 text-center bg-gray-200 rounded cursor-pointer sm:text-left hover:bg-emerald-100 ${
           pathname === `/category/all-products`
-            ? 'text-[#00D991] font-bold transition-all'
+            ? 'bg-emerald-400 font-bold text-white hover:bg-emerald-400'
             : ''
         }`}
       >
-        <button className="box-border block h-6 mt-4 hover:border-b hover:border-[#00D991]">
+        <Link
+          href={`/category/all-products`}
+          scroll={false}
+          className="block w-full"
+        >
           All
-        </button>
-      </Link>
+        </Link>
+      </button>
 
       {uniqueCategories.map((category) => (
-        <Link
-          href={`/category/${category}`}
-          scroll={false}
+        <button
           key={category}
-          className={`${
+          className={`box-border block w-4/5 h-10 pl-2 mt-5 text-center capitalize bg-gray-200 rounded sm:text-left hover:bg-emerald-100 ${
             pathname === `/category/${category}`
-              ? 'text-[#00D991] font-bold transition-all'
+              ? 'bg-emerald-400 font-bold text-white hover:bg-emerald-400'
               : ''
           }`}
         >
-          <button className="box-border block h-6 mt-5 capitalize hover:border-b hover:border-[#00D991]">
+          <Link
+            href={`/category/${category}`}
+            scroll={false}
+            className="block w-full"
+          >
             {category}
-          </button>
-        </Link>
+          </Link>
+        </button>
       ))}
     </div>
   );
